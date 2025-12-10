@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  root "products#index"
+
+  resources :products
+
   # get "/products", to: "products#index"
 
   # get "/products/new", to: "products#new"
@@ -24,6 +28,4 @@ Rails.application.routes.draw do
   # put "/products/:id", to: "products#update"
 
   # delete "/products/:id", to: "products#destroy"
-
-  resources :products
 end
