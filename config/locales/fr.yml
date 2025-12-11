@@ -3,3 +3,4 @@ fr:
   products:
     index:
       title: "Produits"
+      new_product: "Nouveau produit"
