@@ -2,12 +2,12 @@
 service: store
 
 # Name of the container image (use your-user/app-name on external registries).
-image: store
+image: aureroux13/store
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 46.101.130.30
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -30,7 +30,7 @@ registry:
   server: localhost:5555
 
   # Needed for authenticated registries.
-  # username: your-user
+  username: aureroux13
 
   # Always use an access token rather than real password when possible.
   # password:
@@ -76,7 +76,6 @@ volumes:
 # version inside the asset_path.
 asset_path: /rails/public/assets
 
-
 # Configure the image builder.
 builder:
   arch: amd64
@@ -90,11 +89,11 @@ builder:
   # secrets:
   #   - GITHUB_TOKEN
   #   - RAILS_MASTER_KEY
-
 # Use a different ssh user than root
-# ssh:
-#   user: app
-
+ssh:
+  user: root
+  keys:
+    - ~/.ssh/id_ed25519_digitalocean
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
 #   db:
